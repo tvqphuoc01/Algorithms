@@ -1,0 +1,19 @@
+//C program
+#include <stdio.h>
+int main(){
+    int n,k,ar[100],arr=0;
+    scanf("%d",&n);
+    scanf("%d",&k);
+    for(int i=0;i<n;i++){
+        scanf("%d",&ar[i]);
+    } 
+    for(int i=0;i<n;i++){
+        for(int j=i+1;j<n;j++){
+            if((ar[i]+ar[j])%k==0){
+                arr++;
+            }
+        }
+    }
+    printf("%d",arr);
+    return 0;
+}
