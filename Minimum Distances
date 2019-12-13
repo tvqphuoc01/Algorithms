@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+int main(){
+    int n;
+    int Temp, count = 0;
+    int min = 100000;
+    cin >> n;
+    int a[n];
+    for(int i = 0 ;i < n; i++){
+        cin >> a[i];
+    }
+    for(int i = 0; i < n; i++){
+        for(int j = n-1; j > i; j--){
+        if (a[i] == a[j]){
+            Temp = j - i;
+            count++;
+            if(min > Temp){
+                min = Temp;
+                }
+            }
+        }
+    }
+    if (count == 0){
+        min = -1;
+    }
+    cout << min;
+    return 0;
+}
