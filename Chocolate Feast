@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+    int t;
+    cin >> t;
+    int n,m,c;
+    for(int i = 0 ; i < t; i++){
+        cin >> n >> m >> c;
+        int chocolate,paper;
+        chocolate = n/m;
+        paper = chocolate;
+        int bonuschocolate = 0;
+        while(paper >= c){
+        bonuschocolate += paper/c;
+        paper = paper/c + paper%c; 
+        }
+        cout << chocolate + bonuschocolate << endl;
+    }
+    return 0;
+}
