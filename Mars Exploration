@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    char arr[100]; int counts = 0, counto =0;
+    cin.getline(arr,100);
+    for(int i = 0 ;i < strlen(arr)/3;i++){
+        if(arr[3*i]!='S') {
+        counts++;
+    }
+    if(arr[2*i+2+i]!='S') {
+        counts++;
+    }
+    if(arr[3*i+1]!='O') {
+        counto++;
+    }
+    }
+    cout << counts + counto;
+    return 0;
+}
