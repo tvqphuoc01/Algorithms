@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+    int n;
+    cin >> n;
+    int arr[n];
+    for(int i = 0 ; i < n; i++){
+        cin >> arr[i];
+    }
+    int count1 = 0, count2 = 0, k = 0;
+    int arrcount[100];
+    for(int i = 0 ; i < n; i++){
+        for(int j = 0; j < n; j++){
+            if (arr[j] == arr[i]-1 || arr[j] == arr[i]){
+                count1++;
+            }
+        }
+        for(int j = 0; j < n; j++){
+            if (arr[j] == arr[i]+1 || arr[j] == arr[i]){
+                count2++;
+            }
+        }
+        if (count1 > count2){
+            arrcount[k] = count1;
+            k++;
+        } else {
+            arrcount[k] = count2;
+            k++;
+        }
+        count2 = 0;
+        count1 = 0;
+    }
+    int max = 0;
+    for(int i = 0; i < k; i++){
+        if(arrcount[i] > max){
+            max = arrcount[i];
+        }
+    }
+    cout << max;
+    return 0;
+}
