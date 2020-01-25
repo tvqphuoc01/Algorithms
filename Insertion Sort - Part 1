@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+    int n;
+    cin >> n;
+    int arr[n];
+    for(int i = 0; i < n; i++){
+        cin >> arr[i];
+    }
+    int key = arr[n-1];
+    for(int i = n-2; i >= 0; i--){
+        if(i == 0 && arr[i] > key) {
+            arr[i+1] = arr[i];
+            for(int i = 0; i < n; i++){
+                cout << arr[i] <<" "; 
+            }
+            cout << endl;
+            arr[i] = key;
+            for(int i = 0; i < n; i++){
+                cout << arr[i] <<" "; 
+            }
+            break;
+        }
+        if (arr[i] > key){
+            arr[i+1] = arr[i];
+            for(int i = 0; i < n; i++){
+                cout << arr[i] <<" "; 
+            }
+            cout << endl;
+        }
+        else {
+            arr[i+1] = key;
+            for(int i = 0; i < n; i++){
+                cout << arr[i] <<" "; 
+            }
+            break;
+        }
+    }
+    return 0;
+}
