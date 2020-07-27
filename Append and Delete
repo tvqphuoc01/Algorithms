@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    string s;
+    getline(cin, s);
+    string t;
+    getline(cin, t);
+    int k;
+    cin >> k;
+    
+    int L = s.size() + t.size();
+    int i = 0;
+    for(i; s[i] == t[i]; i++);
+    cout << (L <= k + i*2 && L%2 == k%2 || L < k ? "Yes" : "No");
+    return 0;
+}
